@@ -1,0 +1,15 @@
+# Install docker on your Raspberry Pi
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# Add a Non-Root User to the Docker Group
+sudo usermod -aG docker Pi
+
+#Hello World
+sudo docker run hello-world
+
+#Upgrade
+sudo apt-get upgrade
+
+#Uninstall
+sudo apt-get purge docker-ce
