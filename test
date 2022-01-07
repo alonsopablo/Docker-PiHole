@@ -1,0 +1,36 @@
+version: "3"
+
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    hostname: pihole # set an easy hostname to remember
+    domainname: exampledomain # your local domain name
+    mac_address: de:ad:be:ef:ff:01
+  networks:
+      pub_net: # same as network specified below
+      ipv4_address: 192.168.0.202 # the IP of the pihole container
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+    environment:
+      TZ: 'Europe/Madrid'
+      ServerIP: 192.168.0.202 # must match ipv4_address above
+      VIRTUAL_HOST: pihole.exampledomain  # Must be hostname + domainname from 
+      WEBPASSWORD: "randompassword"
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    # Recommended but not required (DHCP needs NET_ADMIN)
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    
+networks:
+  net_pub:   # externally created network (later in article)
+    external: true
