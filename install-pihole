@@ -1,0 +1,11 @@
+Basic pihole: docker-compose.yml.basic_Pihole
+
+# Create the docker-compose file
+sudo nano docker-compose.yml
+
+# Run the compose file
+sudo docker-compose up -d
+
+# Access to the container and change the password
+sudo docker exec -it pihole bash
+pihole -a -p
