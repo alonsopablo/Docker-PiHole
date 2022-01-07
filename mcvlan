@@ -1,0 +1,17 @@
+# Create a "Subnet" for your Containers. Named pub_net
+https://docs.docker.com/network/macvlan/
+
+ docker network create -d macvlan \
+  --subnet=192.168.0.1/24 \
+  --gateway=192.168.0.1 \
+  -o parent=eth0 pub_net
+  
+# Test deploying a nginx on that mcvlan
+docker run --net=pub_net -dit --name nginx-test-01 --ip=192.168.0.211 nginx:alpine nginx-debug -g 'daemon off;'
+
+# Surf to 192.168.0.211 to confirm it is Up. Now you can remove that container
+docker rm nginx-test-01 --force
+
+
+
+
