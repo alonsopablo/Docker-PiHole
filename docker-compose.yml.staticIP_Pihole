@@ -7,8 +7,8 @@ services:
     container_name: pihole
     image: pihole/pihole:latest
     networks:
-      net_pub: # same as network specified below
-      ipv4_address: 192.168.0.201 # the IP of the pihole container
+      pub_net:
+        ipv4_address: 192.168.0.201
     ports:
       - "53:53/tcp"
       - "53:53/udp"
@@ -27,6 +27,8 @@ services:
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
-    networks:
-      net_pub:   # externally created network
-        external: true
+    
+networks:
+  pub_net:
+    external:
+      name: pub_net
