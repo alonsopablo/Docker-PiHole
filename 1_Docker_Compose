@@ -1,4 +1,4 @@
-# Install docker on your Raspberry Pi
+# Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
@@ -8,11 +8,6 @@ sudo usermod -aG docker Pi
 #Hello World
 sudo docker run hello-world
 
-#Upgrade
-sudo apt-get upgrade
-
-#Uninstall
-sudo apt-get purge docker-ce
 
 # Install Docker Compose
 # Install Python3 and pip3
@@ -25,3 +20,11 @@ sudo pip3 install docker-compose
 
 # Enable the Docker system service to start your containers on boot
 sudo systemctl enable docker
+
+
+# Usefull Stuff
+#Upgrade
+sudo apt-get upgrade
+
+#Uninstall
+sudo apt-get purge docker-ce
