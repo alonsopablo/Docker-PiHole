@@ -1,6 +1,8 @@
-Basic pihole: docker-compose.yml.basic_Pihole
+### Compose Files ###
+Basic pihole: basic-pihole.yml
+Custom IP pihole: mcvlan-pihole.yml
 
-# Create the docker-compose file
+# Create the docker-compose file and paste the one you would like to use.
 sudo nano docker-compose.yml
 
 # Run the compose file
