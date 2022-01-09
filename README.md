@@ -2,6 +2,34 @@
 
 In this project we will install Docker on a Raspeberry Pi and test it with 2 containers: pihole and portainer
 
+## Install Docker and Docker Compose
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+Add a Non-Root User to the Docker Group\
+```
+sudo usermod -aG docker Pi
+```
+Test it with a Hello World Container\
+```
+sudo docker run hello-world
+```
+
+Install Python and pip3
+```
+sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip
+```
+Installing Compose using pip
+```
+sudo pip3 install docker-compose
+```
+Enable the Docker system service to start your containers on boot
+```
+sudo systemctl enable docker
+```
 
 ## Connect Mcvlan to localhost. Fast workaround
 With a container attached to a macvlan network, you will find that while it can contact other systems on your local network without a problem, the container will not be able to connect to your host (and your host will not be able to connect to your container). This is a limitation of macvlan interfaces: without special support from a network switch, your host is unable to send packets to its own macvlan interfaces.
