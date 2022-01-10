@@ -23,7 +23,19 @@ docker rm nginx-test-01 --force
 ```
 
 ## Install PiHole
-
+Create the docker-compose file and paste the one availble on this repository
+```
+sudo nano docker-compose.yml
+```
+Run the compose file
+```
+sudo docker-compose up -d
+```
+Change the password
+```
+sudo docker exec -it pihole bash
+pihole -a -p
+```
 
 
 
