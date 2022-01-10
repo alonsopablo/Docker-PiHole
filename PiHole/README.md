@@ -72,3 +72,6 @@ PING 192.168.0.192 (192.168.0.192) 56(84) bytes of data.\
 --- 192.168.0.192 ping statistics ---\
 4 packets transmitted, 4 received, 0% packet loss, time 3098ms\
 rtt min/avg/max/mdev = 0.311/0.424/0.746/0.185 ms
+
+
+This configuration is not persistent.
