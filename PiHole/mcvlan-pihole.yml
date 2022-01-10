@@ -31,4 +31,4 @@ services:
 networks:
   pub_net:
     external:
-      name: pub_net
+      name: docker_net
