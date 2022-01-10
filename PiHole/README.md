@@ -63,11 +63,12 @@ Add a route to our container subnet 192.168.0.192/27
 sudo ip route add 192.168.0.192/27 dev host-docker_net
 ```
 
-pi@raspberrypi:~ $ ping 192.168.0.201                               
-PING 192.168.0.201 (192.168.0.201) 56(84) bytes of data.
-64 bytes from 192.168.0.201: icmp_seq=1 ttl=64 time=0.746 ms
-64 bytes from 192.168.0.201: icmp_seq=2 ttl=64 time=0.239 ms
-64 bytes from 192.168.0.201: icmp_seq=3 ttl=64 time=0.239 ms
-^C
---- 192.168.0.201 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2020ms
+pi@raspberrypi2:~/docker/pihole $ ping 192.168.0.192\
+PING 192.168.0.192 (192.168.0.192) 56(84) bytes of data.\
+64 bytes from 192.168.0.192: icmp_seq=1 ttl=64 time=0.746 ms\
+64 bytes from 192.168.0.192: icmp_seq=2 ttl=64 time=0.311 ms\
+64 bytes from 192.168.0.192: icmp_seq=3 ttl=64 time=0.322 ms\
+64 bytes from 192.168.0.192: icmp_seq=4 ttl=64 time=0.318 ms\
+--- 192.168.0.192 ping statistics ---\
+4 packets transmitted, 4 received, 0% packet loss, time 3098ms\
+rtt min/avg/max/mdev = 0.311/0.424/0.746/0.185 ms
