@@ -42,12 +42,13 @@ With a container attached to a macvlan network, you will find that while it can 
 
 pi@raspberrypi2:~/docker/pihole $ ping 192.168.0.192\
 PING 192.168.0.192 (192.168.0.192) 56(84) bytes of data.\
-From 192.168.0.25 icmp_seq=1 Destination Host Unreachable
-From 192.168.0.25 icmp_seq=2 Destination Host Unreachable
-From 192.168.0.25 icmp_seq=3 Destination Host Unreachable
-^C
---- 192.168.0.192 ping statistics ---
+From 192.168.0.25 icmp_seq=1 Destination Host Unreachable\
+From 192.168.0.25 icmp_seq=2 Destination Host Unreachable\
+From 192.168.0.25 icmp_seq=3 Destination Host Unreachable\
+--- 192.168.0.192 ping statistics ---\
 6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5174m
+
+
 
 sudo ip link add loc-mcvlan link eth0 type macvlan mode bridge
 
