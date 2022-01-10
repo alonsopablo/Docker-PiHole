@@ -1,7 +1,7 @@
 # Install PiHole and assign a Static IP on a mcvlan
 
 ## Create a macvlan network for your Containers. Named dock_net
-We will reserve this new network range on our RTR DHCP 192.168.0.192-224. This way we have a subnet of 32 addressed to deploy our containers.
+We will reserve this new network range on our RTR DHCP 192.168.0.192-224. This way we have a subnet of 32 available addresses to deploy our containers.
 
 ```
  docker network create -d macvlan \
