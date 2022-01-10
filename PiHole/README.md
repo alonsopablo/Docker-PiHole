@@ -37,7 +37,7 @@ sudo docker exec -it pihole bash
 pihole -a -p
 ```
 
-## Connect Mcvlan to localhost.
+## Connect container macvlan to localhost.
 With a container attached to a macvlan network, you will find that while it can contact other systems on your local network without a problem, the container will not be able to connect to your host (and your host will not be able to connect to your container). This is a limitation of macvlan interfaces: without special support from a network switch, your host is unable to send packets to its own macvlan interfaces.
 
 pi@raspberrypi2:~/docker/pihole $ ping 192.168.0.192\
