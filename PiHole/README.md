@@ -8,13 +8,13 @@ We will reserve this new network range on our RTR DHCP 192.168.0.192-224. This w
   --subnet=192.168.0.0/24 \
   --gateway=192.168.0.1 \
   --ip-range=192.168.0.192/27 \
-  --aux-address "host=192.168.0.223" \
+  --aux-address "host=192.168.0.224" \
   docker_net
 ```
 
 Test deploying a nginx on that mcvlan
 ```
-docker run --net=pub_net -dit --name nginx-test-01 --ip=192.168.0.211 nginx:alpine nginx-debug -g 'daemon off;'
+docker run --net=docker_net -dit --name nginx-test-01 --ip=192.168.0.211 nginx:alpine nginx-debug -g 'daemon off;'
 ```
 
 Surf to 192.168.0.211 to confirm it is Up. Now you can remove that container
