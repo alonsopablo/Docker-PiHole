@@ -18,12 +18,10 @@ function check_internet() {
 check_internet
 
 echo "Creating directories..."
-sudo mkdir -p /portainer/Files/AppData/Config/prometheus/config || error "Failed to create config directory!"
-sudo mkdir -p /portainer/Files/AppData/Config/prometheus/data || error "Failed to create data directory for Prometheus!"
-sudo mkdir -p /portainer/Files/AppData/Config/grafana/data || error "Failed to create data directory for Grafana!"
-echo "Downloading Prometheus config files"
-sudo wget -O /portainer/Files/AppData/Config/prometheus/config/prometheus.yml https://raw.githubusercontent.com/oijkn/Docker-Raspberry-PI-Monitoring/main/prometheus/prometheus.yml || error "Failed to download prometheus.yml file!"
-sudo touch /portainer/Files/AppData/Config/grafana/grafana.ini || error "Failed to touch grafana.ini file!"
+sudo mkdir -p ./prometheus/config || error "Failed to create config directory!"
+sudo mkdir -p ./prometheus/data || error "Failed to create data directory for Prometheus!"
+sudo mkdir -p ./grafana/data || error "Failed to create data directory for Grafana!"
+sudo touch ./grafana/grafana.ini || error "Failed to touch grafana.ini file!"
 echo "Setting permissions..."
-sudo chown -R 472:472 /portainer/Files/AppData/Config/grafana/data || error "Failed to set permissions for Grafana data!"
-echo "Done You are ready to goto next step in the install document"
+sudo chown -R 472:472 ./grafana/data || error "Failed to set permissions for Grafana data!"
+echo "Done You are ready to go"
