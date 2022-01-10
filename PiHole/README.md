@@ -1,13 +1,15 @@
 # Install PiHole and assign a Static IP on a mcvlan
 
-## Create a macvlan network for your Containers. Named dock_net
-We will reserve this new network range on our RTR DHCP 192.168.0.192-224. This way we have a subnet of 32 available addresses to deploy our containers.
+## Create a macvlan network for your Containers. Named docker_net
+We will reserve this new network range on our RTR DHCP 192.168.0.192-224. This way we have a subnet of 32 available addresses to deploy our containers. The IP 192.168.1.224 will be reserved to connect this macvlan to the localhost.
 
 ```
  docker network create -d macvlan \
-  --subnet=192.168.0.192/27 \
+  --subnet=192.168.0.0/24 \
   --gateway=192.168.0.1 \
-  -o parent=eth0 dock_net
+  --ip-range=192.168.0.192/27 \
+  --aux-address 'host=192.168.1.224'
+  -o parent=eth0 docker_net
 ```
 
 Test deploying a nginx on that mcvlan
