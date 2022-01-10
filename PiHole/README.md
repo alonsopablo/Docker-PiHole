@@ -49,15 +49,19 @@ From 192.168.0.25 icmp_seq=3 Destination Host Unreachable\
 6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5174m
 
 
-
-sudo ip link add loc-mcvlan link eth0 type macvlan mode bridge
-
-sudo ip addr add 192.168.0.223/32 dev loc-mcvlan
-
-sudo ip link set loc-mcvlan up
-
-sudo ip route add 192.168.0.201/32 dev loc-mcvlan
-
+Create a new macvlan interface
+```
+sudo ip link add host-docker_net link eth0 type macvlan mode bridge
+```
+Configure it with the IP address reserved before(192.168.0.224) and bring it UP
+```
+sudo ip addr add 192.168.0.224/32 dev host-docker_net
+sudo ip link set host-docker_net up
+```
+Add a route to our container subnet 192.168.0.192/27
+```
+sudo ip route add 192.168.0.192/27 dev host-docker_net
+```
 
 pi@raspberrypi:~ $ ping 192.168.0.201                               
 PING 192.168.0.201 (192.168.0.201) 56(84) bytes of data.
