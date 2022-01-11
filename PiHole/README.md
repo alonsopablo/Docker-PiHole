@@ -76,9 +76,11 @@ rtt min/avg/max/mdev = 0.311/0.424/0.746/0.185 ms
 
 This configuration is not persistent.
 
-## Persisten Change
-/etc/network/interfaces
+### Persisten Virtual Interface Change
 
+Acess to /etc/network/ and edit the interfaces file
+
+```
 auto host-docker-net
 iface host-docker-net inet manual
 pre-up ip link add host-docker_net link eth0 type macvlan mode bridge
@@ -86,6 +88,9 @@ pre-up ip addr add 192.168.0.224/32 dev host-docker_net
 up ip link set dev host-docker_net up
 post-up ip route add 192.168.0.192/27 dev host-docker_net
 post-down ip link del dev host-docker_net
+```
 
-
+The interface should now appear after each reboot. Test if using the below command.
+```
 sudo ifup host-docker-net
+```
