@@ -79,10 +79,11 @@ This configuration is not persistent.
 ## Persisten Change
 /etc/network/interfaces
 
+auto host-docker-net
 iface host-docker-net inet manual
 pre-up ip link add host-docker_net link eth0 type macvlan mode bridge
 pre-up ip addr add 192.168.0.224/32 dev host-docker_net
-up ip link set host-docker_net up
+up ip link set dev host-docker_net up
 post-up ip route add 192.168.0.192/27 dev host-docker_net
 post-down ip link del dev host-docker_net
 
