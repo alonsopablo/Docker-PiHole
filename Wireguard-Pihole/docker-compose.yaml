@@ -10,7 +10,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Mendoza
+      - TZ=Europe/Madrid
       - SERVERPORT=51820 #optional
       - PEERS=2 #optional
       - PEERDNS=auto #optional
@@ -39,7 +39,7 @@ services:
       - "80"
       - "443"
     environment:
-      TZ: 'America/Mendoza'
+      TZ: 'Europe/Madrid'
       WEBPASSWORD: 'peladonerd'
     volumes:
       - './etc-pihole/:/etc/pihole/'
