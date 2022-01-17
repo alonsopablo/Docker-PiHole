@@ -1,0 +1,18 @@
+# Configuration for ddclient scripts
+# generated from debconf on Sat  8 Jan 14:12:14 GMT 2022
+#
+# /etc/default/ddclient
+
+# Set to "true" if ddclient should be run every time DHCP client ('dhclient'
+# from package isc-dhcp-client) updates the systems IP address.
+run_dhclient="false"
+
+# Set to "true" if ddclient should be run every time a new ppp connection is
+# established. This might be useful, if you are using dial-on-demand.
+run_ipup="false"
+
+run_daemon="true"
+
+# Set the time interval between the updates of the dynamic DNS name in seconds.
+# This option only takes effect if the ddclient runs in daemon mode.
+daemon_interval="5m"
