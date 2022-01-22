@@ -18,7 +18,7 @@ services:
   nginxdb:
     image: 'jc21/mariadb-aria:latest'
     environment:
-      MYSQL_ROOT_PASSWORD: 'nerdlab95'
+      MYSQL_ROOT_PASSWORD: 'changeme'
       MYSQL_DATABASE: 'npm'
       MYSQL_USER: 'admin'
       MYSQL_PASSWORD: 'changeme'
