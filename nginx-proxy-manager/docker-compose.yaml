@@ -1,26 +1,26 @@
 version: '3'
 services:
-  app:
+  nginxproxymanager:
     image: 'jc21/nginx-proxy-manager:latest'
     ports:
-      - '80:80'
+      - '8080:80'
       - '81:81'
       - '443:443'
     environment:
-      DB_MYSQL_HOST: "db"
+      DB_MYSQL_HOST: "nginxdb"
       DB_MYSQL_PORT: 3306
-      DB_MYSQL_USER: "npm"
-      DB_MYSQL_PASSWORD: "npm"
+      DB_MYSQL_USER: "admin"
+      DB_MYSQL_PASSWORD: "changeme"
       DB_MYSQL_NAME: "npm"
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-  db:
+  nginxdb:
     image: 'jc21/mariadb-aria:latest'
     environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_ROOT_PASSWORD: 'nerdlab95'
       MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'changeme'
     volumes:
       - ./data/mysql:/var/lib/mysql
