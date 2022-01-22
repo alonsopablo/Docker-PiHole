@@ -2,6 +2,7 @@ version: '3'
 services:
   nginxproxymanager:
     image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginxproxymanager
     ports:
       - '8080:80'
       - '81:81'
@@ -17,6 +18,7 @@ services:
       - ./letsencrypt:/etc/letsencrypt
   nginxdb:
     image: 'jc21/mariadb-aria:latest'
+    container_name: nginxdb
     environment:
       MYSQL_ROOT_PASSWORD: 'changeme'
       MYSQL_DATABASE: 'npm'
