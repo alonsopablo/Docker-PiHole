@@ -44,7 +44,7 @@ sudo systemctl enable ddclient
 
 ## 3.- Port Forwarding on your RTR
 
-Devide: Raspberry Pi\
+Device: Raspberry Pi\
 Protocol: UDP\
 Aplication: Other/Wireguard\
 Port: 51820\
