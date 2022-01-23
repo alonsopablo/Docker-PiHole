@@ -57,7 +57,7 @@ To force the wireguard container to use the Pihole one as DNS:
 - Create a custom network and assign the static IP 172.20.0.7 to the Pihole container. 
 - Assign assign this IP to the Wireguard container DNS on the Docker-Compose file. 
 
-The other settings are the standar ones unless the Dynamic DNS created before. 
+The other settings are the standar ones unless the Dynamic DNS created before. Alternative: use a non-proxied cloudflare record following the https://github.com/alonsopablo/DynamicDNS-Cloudflare tutorial.
 
 ```
 - SERVERURL=you.dynamic.dns
