@@ -35,3 +35,28 @@ Upgrade and Uninstall comands
 sudo apt-get upgrade
 sudo apt-get purge docker-ce
 ```
+
+## Increase the Swap memory
+I will recommend to increase your Raspberry Pi Swap capacity to match the RAM memory.
+
+1.- Stop the Swap file
+```
+sudo dphys-swapfile swapoff
+```
+2.- Modify the Swap file
+```
+sudo nano /etc/dphys-swapfile
+```
+3.- I want to increase it to 1GB
+```
+CONF_SWAPSIZE=1024
+```
+4.- Recreate Swap file
+```
+sudo dphys-swapfile setup
+```
+5.- Restart de Swapfile and reboot your Raspberry
+```
+sudo dphys-swapfile swapon
+sudo reboot
+```
