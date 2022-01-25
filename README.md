@@ -7,11 +7,11 @@ In this project we will install Docker on a Raspeberry Pi and test it with multi
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
-Add a Non-Root User to the Docker Group\
+Add a Non-Root User to the Docker Group
 ```
 sudo usermod -aG docker Pi
 ```
-Test it with a Hello World Container\
+Test it with a Hello World Container
 ```
 sudo docker run hello-world
 ```
