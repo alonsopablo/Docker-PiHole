@@ -8,7 +8,8 @@ Access to the nginx proxy manager GUI on http://localhost:81 - Credential:admin@
 FWD Ports 80 (HTTP) and 443 (HTTPS) on your Router 
 
 ## Add a new Proxy Host
-Nginx Proxy Manager Dashboard -> Hosts -> Add Proxy Host \
+Nginx Proxy Manager Dashboard -> Hosts -> Add Proxy Host 
+
 Details 
 - Domain Name: your.domain
 - Scheme: http or https depending on the service you would like to expose
